@@ -1,8 +1,13 @@
+/* 
+    First Task
+*/
+
 let option = "0";
 let text = "";
 
 do {
-    option = prompt("Odeberi redni broj algoritma kojeg zelis izvrsiti:\n1 > Reverse\n2 > Max\n3 > Capitalize\n4 > Ordered Reverse\nKRAJ > Kraj programa").toLowerCase();
+    option = prompt("Odeberi redni broj algoritma kojeg zelis izvrsiti:\n1 \u2BC8 Reverse\n2 \u2BC8 Max\n3 \u2BC8 Capitalize\n4 \u2BC8 Ordered Reverse\nKRAJ \u2BC8 Kraj programa").toLowerCase();
+    // zbog nekog razloga mi ne rade \t ni \u2BC8 - strelice
     
     switch(option) {
         case "1":
@@ -29,6 +34,11 @@ do {
     }
 
 } while (option != "kraj");
+
+/*
+    Functions
+*/
+
 
 function ReverseString(string) {
     let reversedString = "";
@@ -87,3 +97,77 @@ function OrderedReverse(string) {
 
     return orderedReversedString;
 }   
+
+/*
+    Second Task
+*/
+
+    array = [
+        {
+            name: "Luke Skywalker",
+            height: 172,
+            mass: 77,
+            hair_color: "blond",
+            skin_color: "fair",
+            eye_color: "blue",
+            birth_year: "19BBY",
+            gender: "male"
+        },
+        {
+            name: "C-3PO",
+            height: 167,
+            mass: 75,
+            hair_color: "n/a",
+            skin_color: "gold",
+            eye_color: "yellow",
+            birth_year: "112BBY",
+            gender: "n/a"
+        },
+        {
+            name: "R2-D2",
+            height: 96,
+            mass: 32,
+            hair_color: "n/a",
+            skin_color: "white, blue",
+            eye_color: "red",
+            birth_year: "33BBY",
+            gender: "n/a"
+        },
+        {
+            name: "Darth Vader",
+            height: 202,
+            mass: 136,
+            hair_color: "none",
+            skin_color: "white",
+            eye_color: "yellow",
+            birth_year: "41.9BBY",
+            gender: "male"
+        },
+        {
+            name: "Leia Organa",
+            height: 150,
+            mass: 49,
+            hair_color: "brown",
+            skin_color: "light",
+            eye_color: "brown",
+            birth_year: "19BBY",
+            gender: "female"
+    }];  
+
+SortByHeight(array);
+console.log(array);
+console.log(AverageWeight(array))
+
+function SortByHeight(arr) {
+    arr.sort((element1, element2) => element1.height - element2.height);
+}
+
+function AverageWeight(arr) {
+    let massTotal = 0;
+    for(let character of arr){
+       massTotal += character.mass;
+   }
+    return massTotal / arr.length;
+}
+
+var array;
